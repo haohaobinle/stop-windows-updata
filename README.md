@@ -56,6 +56,15 @@
 
 ## 方法二 使用regedit的方式
 ### win+R輸入regedit
+#### 停用windows updata
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc]
+"Start"=dword:00000004
+
+#### 啟用windows updata
  [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
 "Start"=dword:00000003
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc]
