@@ -1,13 +1,12 @@
-windows updata關閉啟用方法
+# windows updata關閉啟用方法
 
 參考網址：https://home.gamer.com.tw/artwork.php?sn=5650719
 
-方法一 使用系統管理員執行CMD
+## 方法一 使用系統管理員執行CMD
 
-停用依照以下順序執行
-
+### 停用依照以下順序執行
 net stop wuauserv
-
+ 
 net stop WaaSMedicSvc
 
 net stop UsoSvc
@@ -18,7 +17,7 @@ sc config WaaSMedicSvc start= disabled
 
 sc config UsoSvc start= disabled
 
-恢復啟用依照以下順序執行
+### 恢復啟用依照以下順序執行
 
 sc config wuauserv start= demand
 
@@ -32,7 +31,7 @@ net start WaaSMedicSvc
 
 net start UsoSvc
 
-方法二 使用bat檔執行
+## 方法二 使用bat檔執行
 
 .bat程式指令
 
@@ -40,7 +39,7 @@ net start UsoSvc
 
 請使用系統管理員的身分執行
 
-停止服務為下
+### 停止服務為下
 
 @echo off
 
@@ -64,7 +63,7 @@ echo 完成操作。
 
 pause
 
-啟用服務為下
+### 啟用服務為下
 
 @echo off
 
@@ -88,9 +87,9 @@ echo 完成操作。
 
 pause
 
-方法二 使用regedit的方式
+## 方法二 使用regedit的方式
 
-win+R輸入regedit
+### win+R輸入regedit
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
 "Start"=dword:00000003
@@ -99,7 +98,7 @@ win+R輸入regedit
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc]
 "Start"=dword:00000003
 
-其他停止抓取更新的方法 參考網址如下
+## 其他停止抓取更新的方法 參考網址如下
 
 https://learn.microsoft.com/zh-tw/windows/deployment/update/waas-wu-settings
 https://tw.easeus.com/backup-recovery/how-to-stop-windows-10-from-automatically-update.html
