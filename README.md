@@ -64,7 +64,7 @@
 "Start"=dword:00000003
 
 ## 🔗其他停止抓取更新的方法 參考網址如下
-
-- https://learn.microsoft.com/zh-tw/windows/deployment/update/waas-wu-settings
-- https://tw.easeus.com/backup-recovery/how-to-stop-windows-10-from-automatically-update.html
-- https://www.diskpart.com/tw/windows-11/stop-windows-11-update.html
+管理其他 Windows Update 設定
+- 管理其他 Windows Update 設定(regedit): https://learn.microsoft.com/zh-tw/windows/deployment/update/waas-wu-settings
+- 阻止Windows 10更新的所有方法: https://tw.easeus.com/backup-recovery/how-to-stop-windows-10-from-automatically-update.html
+- 4種關閉Win11更新的方法: https://www.diskpart.com/tw/windows-11/stop-windows-11-update.html
