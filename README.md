@@ -1,4 +1,4 @@
-# windows updata關閉啟用方法
+# windows updata停用方法
 
 參考網址：https://home.gamer.com.tw/artwork.php?sn=5650719
 
