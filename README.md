@@ -21,24 +21,24 @@
     net start UsoSvc
 
 ## 方法二 使用bat檔執行
-
 .bat程式指令  
 內有中文，可使用ANSI編碼，txt另存時可以設定  
 請使用**系統管理員的身分執行**
-### 停止服務為下
+### sc指令停用啟用
+#### 停止服務為下
     @echo off
-    echo 正在停止服务...
+    echo 正在停止服務...
     net stop wuauserv
     net stop WaaSMedicSvc
     net stop UsoSvc
-    echo 正在将服务设置为已停用...
+    echo 正在將服務設置為已停用...
     sc config wuauserv start= disabled
     sc config WaaSMedicSvc start= disabled
     sc config UsoSvc start= disabled
     echo 完成操作。
     pause
 
-### 啟用服務為下
+#### 啟用服務為下
     @echo off
     echo 正在將服務設置為手動...
     sc config wuauserv start= demand
@@ -50,7 +50,26 @@
     net start UsoSvc
     echo 完成操作。
     pause
-
+### 登入編輯程式(regedit)(註冊表)
+**該方法電腦需要進行重啟**
+#### 停用服務為下
+    @echo off
+    echo 正在將服務設置為停用...
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv" /v Start /t REG_DWORD /d 4 /f
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc" /v Start /t REG_DWORD /d 4 /f
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc" /v Start /t REG_DWORD /d 4 /f
+    echo 完成操作。
+    echo 電腦須重啟即可完成設定。
+    pause
+#### 啟用服務為下
+    @echo off
+    echo 正在將服務設置為啟用...
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv" /v Start /t REG_DWORD /d 3 /f
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc" /v Start /t REG_DWORD /d 3 /f
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc" /v Start /t REG_DWORD /d 3 /f
+    echo 完成操作。
+    echo 電腦須重啟即可完成設定。
+    pause
 ## 方法二 使用regedit的方式
 ### win+R輸入regedit
 #### 停用windows updata
