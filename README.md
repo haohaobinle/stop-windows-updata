@@ -50,7 +50,7 @@
     net start UsoSvc
     echo 完成操作。
     pause
-### 登入編輯程式(regedit)(註冊表)
+### 登入編輯程式(regedit)(註冊表)啟用停用
 **該方法電腦需要進行重啟**
 #### 停用服務為下
     @echo off
