@@ -1,12 +1,8 @@
 @echo off
-echo ¥¿¦b°±¤îªA°È...
-net stop wuauserv
-net stop WaaSMedicSvc
-net stop UsoSvc
-echo ¥¿¦b±NªA°È³]¸m¬°¤w°±¥Î...
+echo æ­£åœ¨å°‡æœå‹™è¨­ç½®ç‚ºå•Ÿç”¨...
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv" /v Start /t REG_DWORD /d 3 /f
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc" /v Start /t REG_DWORD /d 3 /f
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc" /v Start /t REG_DWORD /d 3 /f
-echo §¹¦¨¾Ş§@¡C
-echo ¹q¸£¶·­«±Ò§Y¥i§¹¦¨³]©w¡C
+echo å®Œæˆæ“ä½œã€‚
+echo é›»è…¦é ˆé‡å•Ÿå³å¯å®Œæˆè¨­å®šã€‚
 pause
